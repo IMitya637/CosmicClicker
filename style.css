@@ -1,0 +1,784 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: white;
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Космический фон */
+.cosmic-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: linear-gradient(135deg, #0a0a2a 0%, #1a1a3a 25%, #0f0f2a 50%, #050518 75%, #020210 100%);
+}
+
+/* Слой со звездами */
+.stars-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.stars-layer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 3% 12%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 7% 45%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 12% 78%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 15% 23%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 18% 67%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 22% 91%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 25% 34%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 28% 56%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 32% 82%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 35% 15%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 38% 48%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 42% 71%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 45% 93%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 48% 27%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 52% 62%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 55% 84%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 58% 19%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 62% 53%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 65% 76%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 68% 38%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 72% 64%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 75% 89%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 78% 22%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 82% 47%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 85% 71%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 88% 94%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 92% 31%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 95% 58%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 98% 83%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 5% 7%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 42% 4%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 78% 9%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 23% 97%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 67% 99%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 91% 11%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 34% 72%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 56% 41%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 83% 64%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 11% 52%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 47% 29%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 73% 86%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 96% 44%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 28% 12%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 61% 35%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 19% 69%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 84% 19%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 39% 81%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 52% 93%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 76% 28%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 14% 44%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 89% 57%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 66% 13%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 31% 76%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 49% 48%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 94% 62%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 8% 33%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 71% 54%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 37% 17%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 58% 72%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 82% 41%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 25% 88%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 43% 63%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 79% 32%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 16% 9%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 64% 97%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 91% 73%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 48% 21%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 22% 59%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 55% 84%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 87% 95%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 33% 41%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 69% 67%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 97% 28%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 4% 64%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 44% 36%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 77% 51%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 12% 81%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 53% 12%, white, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 86% 74%, white, rgba(0,0,0,0));
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    animation: starsFloat 150s linear infinite;
+    opacity: 0.9;
+}
+
+.stars-layer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(1px 1px at 2% 8%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 6% 34%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 9% 67%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 13% 91%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 17% 25%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 21% 58%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 24% 82%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 27% 14%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 31% 46%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 34% 73%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 38% 95%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 41% 29%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 44% 62%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 48% 84%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 51% 18%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 54% 51%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 58% 77%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 61% 92%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 64% 36%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 68% 69%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 71% 88%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 74% 23%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 78% 57%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 81% 79%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 84% 11%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 88% 44%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 91% 72%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 94% 96%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 97% 31%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 99% 65%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 19% 3%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 36% 98%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 59% 6%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 82% 99%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 45% 1%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 73% 4%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 92% 89%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 28% 54%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 52% 42%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 76% 33%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 14% 49%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 39% 86%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 63% 61%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 87% 17%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 11% 74%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 46% 28%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 69% 93%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 93% 52%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 32% 13%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 57% 38%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 81% 81%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 23% 22%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 48% 75%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 72% 48%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 96% 63%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 16% 85%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 42% 7%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 67% 19%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 89% 41%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 35% 66%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 61% 95%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 84% 27%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 26% 71%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 51% 9%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 75% 58%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 98% 77%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 4% 44%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 29% 92%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 55% 56%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 79% 12%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 12% 37%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 38% 82%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 64% 26%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 86% 69%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 41% 53%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 70% 35%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 95% 85%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 20% 15%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 60% 45%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 90% 50%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 8% 60%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 44% 31%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 77% 90%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 33% 5%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 49% 68%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 68% 80%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 88% 39%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 17% 94%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 62% 14%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 83% 72%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 30% 48%, rgba(255,255,255,0.6), rgba(0,0,0,0));
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    animation: starsFloatReverse 120s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes starsFloat {
+    0% { transform: translateY(0px) translateX(0px); }
+    100% { transform: translateY(-40px) translateX(30px); }
+}
+
+@keyframes starsFloatReverse {
+    0% { transform: translateY(0px) translateX(0px); }
+    100% { transform: translateY(30px) translateX(-35px); }
+}
+
+.nebula-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 40%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 45% 85%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 95% 20%, rgba(168, 85, 247, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 5% 55%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 55% 15%, rgba(139, 92, 246, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 35% 65%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 75% 45%, rgba(168, 85, 247, 0.1) 0%, transparent 45%),
+        radial-gradient(circle at 12% 88%, rgba(236, 72, 153, 0.08) 0%, transparent 55%);
+    animation: nebulaPulse 20s ease-in-out infinite;
+}
+
+@keyframes nebulaPulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.logo-icon-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* Главный экран */
+.hero {
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.hero-left h1 {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #fff, #b794f4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-left p {
+    font-size: 20px;
+    color: #c2fc03;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #6b46c1, #8b5cf6);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 18px 50px;
+    border-radius: 60px;
+    font-size: 26px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(107, 70, 193, 0.5);
+    gap: 12px;
+}
+
+.download-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(107, 70, 193, 0.7);
+    background: linear-gradient(135deg, #7c3aed, #9b6eff);
+}
+
+.download-button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Описание игры */
+.game-description {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.description-card {
+    background: rgba(26, 27, 31, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(107, 70, 193, 0.3);
+    border-radius: 32px;
+    padding: 48px 56px;
+    transition: all 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.description-image-wrapper {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.description-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+.description-image:hover {
+    transform: scale(1.02);
+}
+
+.description-text-wrapper {
+    text-align: center;
+}
+
+.description-text {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: #e5e5e5;
+    margin-bottom: 32px;
+    font-family: 'Segoe UI', 'Helvetica Neue', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.01em;
+    font-weight: 450;
+}
+
+.description-love {
+    font-size: 1rem;
+    color: #b794f4;
+    font-family: 'Courier New', 'Fira Code', monospace;
+    letter-spacing: 0.5px;
+    border-top: 1px dashed #6b46c1;
+    padding-top: 28px;
+    display: inline-block;
+    width: auto;
+    font-style: italic;
+}
+
+/* Блок нововведений */
+.changelog {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.changelog-card {
+    background: rgba(26, 27, 31, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(107, 70, 193, 0.3);
+    border-radius: 32px;
+    padding: 48px 56px;
+    transition: all 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.changelog-card h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #fff, #b794f4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.changelog-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #e5e5e5;
+    text-align: center;
+    letter-spacing: 0.3px;
+}
+
+/* Новая секция: Почему стоит поиграть? */
+.why-play {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.why-play-card {
+    background: rgba(26, 27, 31, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(107, 70, 193, 0.3);
+    border-radius: 32px;
+    padding: 48px 56px;
+    transition: all 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.why-play-card h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #fff, #b794f4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.reason {
+    text-align: center;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 24px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.reason:hover {
+    transform: translateY(-5px);
+    background: rgba(107, 70, 193, 0.15);
+}
+
+.reason-icon {
+    font-size: 52px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.reason h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #b794f4;
+}
+
+.reason p {
+    color: #c0c0c0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Секция FAQ */
+.faq {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.faq-card {
+    background: rgba(26, 27, 31, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(107, 70, 193, 0.3);
+    border-radius: 32px;
+    padding: 48px 56px;
+    transition: all 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.faq-card h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #fff, #b794f4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(107, 70, 193, 0.3);
+    padding-bottom: 18px;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    font-size: 18px;
+    font-weight: 600;
+    color: #b794f4;
+    margin-bottom: 10px;
+}
+
+.faq-answer {
+    font-size: 16px;
+    color: #c0c0c0;
+    line-height: 1.5;
+}
+
+/* Футер */
+.footer {
+    background: rgba(15, 16, 20, 0.9);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(107, 70, 193, 0.3);
+    padding: 60px 40px 20px;
+    margin-top: 80px;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    text-align: center;
+}
+
+.footer-column h4 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.footer-column a {
+    color: #b794f4;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.2s;
+}
+
+.footer-column a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    max-width: 1300px;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(107, 70, 193, 0.3);
+    text-align: center;
+    color: #808080;
+}
+
+/* Модальное окно */
+.warning-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.warning-modal.show {
+    display: flex;
+}
+
+.warning-modal-content {
+    background: linear-gradient(135deg, #1a1b2f, #0f0f1a);
+    border: 1px solid #6b46c1;
+    border-radius: 24px;
+    padding: 32px 40px;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.warning-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.warning-icon {
+    font-size: 36px;
+}
+
+.warning-modal-header h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ff6b6b;
+}
+
+.warning-modal-content p {
+    font-size: 18px;
+    color: #d0d0d0;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.warning-modal-btn {
+    background: linear-gradient(135deg, #6b46c1, #8b5cf6);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.warning-modal-btn:hover {
+    transform: scale(1.02);
+    background: linear-gradient(135deg, #7c3aed, #9b6eff);
+    box-shadow: 0 5px 20px rgba(107, 70, 193, 0.5);
+}
+
+/* Адаптивность */
+@media (max-width: 1000px) {
+    .hero-left h1 {
+        font-size: 48px;
+    }
+    
+    .changelog-card {
+        padding: 32px 24px;
+    }
+    
+    .description-card {
+        padding: 32px 24px;
+    }
+    
+    .why-play-card {
+        padding: 32px 24px;
+    }
+    
+    .faq-card {
+        padding: 32px 24px;
+    }
+    
+    .reasons-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .description-text {
+        font-size: 1rem;
+    }
+    
+    .download-button {
+        font-size: 20px;
+        padding: 15px 35px;
+    }
+    
+    .hero-left h1 {
+        font-size: 36px;
+    }
+    
+    .changelog-card h2 {
+        font-size: 24px;
+    }
+    
+    .changelog-text {
+        font-size: 0.95rem;
+    }
+    
+    .why-play-card h2 {
+        font-size: 24px;
+    }
+    
+    .faq-card h2 {
+        font-size: 24px;
+    }
+    
+    .faq-question {
+        font-size: 16px;
+    }
+    
+    .faq-answer {
+        font-size: 14px;
+    }
+    
+    .warning-modal-content {
+        padding: 24px 28px;
+    }
+    
+    .warning-modal-header h3 {
+        font-size: 24px;
+    }
+    
+    .warning-modal-content p {
+        font-size: 16px;
+    }
+}
