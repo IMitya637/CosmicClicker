@@ -6,6 +6,80 @@
     <title>Cosmic Clicker | MoonLight TM</title>
     <link rel="icon" href="CosmicClicker.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== ДОПОЛНИТЕЛЬНО: РЕКЛАМА + ОБЁРТКА ===== */
+        
+        /* Обёртка для контента и рекламы */
+        .page-wrapper {
+            display: flex;
+            gap: 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+        .page-content {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        /* РЕКЛАМА СПРАВА (комп) */
+        .ad-sidebar {
+            width: 300px;
+            flex-shrink: 0;
+            padding-top: 40px;
+        }
+        .ad-sidebar .ad-box {
+            display: none;
+            background: rgba(26, 27, 31, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(107, 70, 193, 0.3);
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-align: center;
+            position: sticky;
+            top: 20px;
+        }
+        
+        /* РЕКЛАМА СНИЗУ (телефон) */
+        .ad-mobile {
+            display: none;
+            margin: 20px auto;
+            max-width: 728px;
+            text-align: center;
+            background: rgba(26, 27, 31, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(107, 70, 193, 0.3);
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* АДАПТИВ по ширине */
+        @media (max-width: 1000px) {
+            .page-wrapper { flex-direction: column; }
+            .ad-sidebar { display: none !important; }
+            .ad-mobile { display: block !important; }
+        }
+        @media (min-width: 1001px) {
+            .ad-sidebar { display: block !important; }
+            .ad-mobile { display: none !important; }
+        }
+        
+        /* Обнуляем hero margin, чтобы не было двойных отступов */
+        .page-content .hero { margin: 40px auto; }
+        .page-content .game-description,
+        .page-content .changelog,
+        .page-content .why-play,
+        .page-content .faq {
+            max-width: 100%;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
     <div class="cosmic-background">
@@ -13,112 +87,144 @@
         <div class="nebula-layer"></div>
     </div>
 
-    <section class="hero">
-        <div class="hero-left">
-            <h1>Cosmic Clicker</h1>
-            <p>Исследуйте бескрайний космос, открывайте новые миры и становитесь легендой всей вселенной!</p>
-            <button class="download-button" onclick="downloadGame()">
-                Скачать 🚀
-            </button>
-        </div>
-    </section>
+    <!-- ===== ОБЁРТКА: КОНТЕНТ + РЕКЛАМА ===== -->
+    <div class="page-wrapper">
+        
+        <!-- КОНТЕНТ -->
+        <div class="page-content">
 
-    <section class="game-description">
-        <div class="description-card">
-            <div class="description-image-wrapper">
-                <img src="Баннер.png" alt="Cosmic Clicker" class="description-image">
-            </div>
-            <div class="description-text-wrapper">
-                <p class="description-text">
-                    CosmicClicker — это крутая космическая кликер игра, в которой не заскучаешь! Много различного функционала, космическая тематика, расслабляющая музыка и много другого! В игре восемь планет, как в реальной жизни, а именно: Меркурий, Венера, Земля, Марс, Юпитер, Сатурн, Уран и Нептун. А дальше узнаете, когда попробуете эту замечательную игру!
-                </p>
-                <p class="description-love">
-                    Сделано с космической любовью — MoonLight *553578*
-                </p>
-            </div>
-        </div>
-    </section>
+            <section class="hero">
+                <div class="hero-left">
+                    <h1>Cosmic Clicker</h1>
+                    <p>Исследуйте бескрайний космос, открывайте новые миры и становитесь легендой всей вселенной!</p>
+                    <button class="download-button" onclick="downloadGame()">
+                        Скачать 🚀
+                    </button>
+                </div>
+            </section>
 
-    <section class="changelog">
-        <div class="changelog-card">
-            <h2>Нововведения и исправления</h2>
-            <p class="changelog-text">
-                Новая анимация при запуске игры; новое окно - Ежедневные задания; переделана система сохранений; новое окно - Сохранения; сброс игры теперь в окне сохранений; добавлен новый звук - звук выполнения ежедневного задания; в магазине появились пропуски времени - 6 часов и 12 часов; исправлена ошибка в окне бустов
-            </p>
-        </div>
-    </section>
+            <section class="game-description">
+                <div class="description-card">
+                    <div class="description-image-wrapper">
+                        <img src="Баннер.png" alt="Cosmic Clicker" class="description-image">
+                    </div>
+                    <div class="description-text-wrapper">
+                        <p class="description-text">
+                            CosmicClicker — это крутая космическая кликер игра, в которой не заскучаешь! Много различного функционала, космическая тематика, расслабляющая музыка и много другого! В игре восемь планет, как в реальной жизни, а именно: Меркурий, Венера, Земля, Марс, Юпитер, Сатурн, Уран и Нептун. А дальше узнаете, когда попробуете эту замечательную игру!
+                        </p>
+                        <p class="description-love">
+                            Сделано с космической любовью — MoonLight *553578*
+                        </p>
+                    </div>
+                </div>
+            </section>
 
-    <section class="why-play">
-        <div class="why-play-card">
-            <h2>✨ Почему стоит поиграть?</h2>
-            <div class="reasons-grid">
-                <div class="reason">
-                    <span class="reason-icon">🪐</span>
-                    <h3>8 уникальных планет</h3>
-                    <p>От Меркурия до Нептуна — каждая планета приближают вас к владению вселенной!</p>
+            <section class="changelog">
+                <div class="changelog-card">
+                    <h2>Нововведения и исправления</h2>
+                    <p class="changelog-text">
+                        Новая анимация при запуске игры; новое окно - Ежедневные задания; переделана система сохранений; новое окно - Сохранения; сброс игры теперь в окне сохранений; добавлен новый звук - звук выполнения ежедневного задания; в магазине появились пропуски времени - 6 часов и 12 часов; исправлена ошибка в окне бустов
+                    </p>
                 </div>
-                <div class="reason">
-                    <span class="reason-icon">🎵</span>
-                    <h3>Расслабляющая музыка</h3>
-                    <p>Погрузитесь в атмосферу космоса с нашим саундтреком</p>
-                </div>
-                <div class="reason">
-                    <span class="reason-icon">📅</span>
-                    <h3>Ежедневные задания</h3>
-                    <p>Новые ежедневные задания — получайте крутые бонусы</p>
-                </div>
-                <div class="reason">
-                    <span class="reason-icon">💾</span>
-                    <h3>Умные сохранения</h3>
-                    <p>Ваш прогресс всегда под защитой — несколько слотов сохранений</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <section class="faq">
-        <div class="faq-card">
-            <h2>❓ Часто задаваемые вопросы</h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">🔹 Как сохранить прогресс?</div>
-                    <div class="faq-answer">Прогресс сохраняется автоматически! Также вы можете создать ещё сохранения</div>
+            <section class="why-play">
+                <div class="why-play-card">
+                    <h2>✨ Почему стоит поиграть?</h2>
+                    <div class="reasons-grid">
+                        <div class="reason">
+                            <span class="reason-icon">🪐</span>
+                            <h3>8 уникальных планет</h3>
+                            <p>От Меркурия до Нептуна — каждая планета приближают вас к владению вселенной!</p>
+                        </div>
+                        <div class="reason">
+                            <span class="reason-icon">🎵</span>
+                            <h3>Расслабляющая музыка</h3>
+                            <p>Погрузитесь в атмосферу космоса с нашим саундтреком</p>
+                        </div>
+                        <div class="reason">
+                            <span class="reason-icon">📅</span>
+                            <h3>Ежедневные задания</h3>
+                            <p>Новые ежедневные задания — получайте крутые бонусы</p>
+                        </div>
+                        <div class="reason">
+                            <span class="reason-icon">💾</span>
+                            <h3>Умные сохранения</h3>
+                            <p>Ваш прогресс всегда под защитой — несколько слотов сохранений</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">🔹 Игра бесплатна?</div>
-                    <div class="faq-answer">Да, Cosmic Clicker полностью бесплатен! Никаких скрытых платежей и донатов</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">🔹 Будут ли ещё обновления?</div>
-                    <div class="faq-answer">Да, они конечно будут! Есть много контента для игры</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">🔹 Как связаться с разработчиком?</div>
-                    <div class="faq-answer">Все контакты есть в футере — Telegram, YouTube и Instagram. Пишите, всегда на связи!</div>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>📞 Тех. поддержка</h4>
-                <a href="https://t.me/IMitya637" target="_blank">Telegram — @IMitya637</a>
-            </div>
-            <div class="footer-column">
-                <h4>🎬 YouTube</h4>
-                <a href="http://www.youtube.com/@IMityaYT" target="_blank">@IMityaYT</a>
-            </div>
-            <div class="footer-column">
-                <h4>📷 Instagram</h4>
-                <a href="https://www.instagram.com/imitya_637?igsh=Ym02Z3kyd2F0YnQ3" target="_blank">@imitya_637</a>
+            <section class="faq">
+                <div class="faq-card">
+                    <h2>❓ Часто задаваемые вопросы</h2>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <div class="faq-question">🔹 Как сохранить прогресс?</div>
+                            <div class="faq-answer">Прогресс сохраняется автоматически! Также вы можете создать ещё сохранения</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">🔹 Игра бесплатна?</div>
+                            <div class="faq-answer">Да, Cosmic Clicker полностью бесплатен! Никаких скрытых платежей и донатов</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">🔹 Будут ли ещё обновления?</div>
+                            <div class="faq-answer">Да, они конечно будут! Есть много контента для игры</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">🔹 Как связаться с разработчиком?</div>
+                            <div class="faq-answer">Все контакты есть в футере — Telegram, YouTube и Instagram. Пишите, всегда на связи!</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h4>📞 Тех. поддержка</h4>
+                        <a href="https://t.me/IMitya637" target="_blank">Telegram — @IMitya637</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>🎬 YouTube</h4>
+                        <a href="http://www.youtube.com/@IMityaYT" target="_blank">@IMityaYT</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>📷 Instagram</h4>
+                        <a href="https://www.instagram.com/imitya_637?igsh=Ym02Z3kyd2F0YnQ3" target="_blank">@imitya_637</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    © 2026 Cosmic Clicker | MoonLight TM. Все права защищены
+                </div>
+            </footer>
+
+        </div>
+        <!-- /КОНТЕНТ -->
+
+        <!-- РЕКЛАМА СПРАВА (комп) -->
+        <div class="ad-sidebar">
+            <div class="ad-box" id="adDesktop">
+                <a id="lDesktop" href="#" target="_blank" rel="noopener" style="display:block">
+                    <img id="iDesktop" src="" alt="" style="max-width:100%;height:auto;border-radius:8px;display:none">
+                    <video id="vDesktop" muted autoplay loop playsinline style="max-width:100%;height:auto;border-radius:8px;display:none"></video>
+                </a>
+                <div style="font-size:11px;color:#999;margin-top:6px">Реклама</div>
             </div>
         </div>
-        <div class="footer-bottom">
-            © 2026 Cosmic Clicker | MoonLight TM. Все права защищены
-        </div>
-    </footer>
+
+    </div>
+    <!-- /ОБЁРТКА -->
+
+    <!-- РЕКЛАМА СНИЗУ (телефон) -->
+    <div class="ad-mobile" id="adMobile">
+        <a id="lMobile" href="#" target="_blank" rel="noopener" style="display:block">
+            <img id="iMobile" src="" alt="" style="max-width:100%;height:auto;border-radius:8px;display:none">
+            <video id="vMobile" muted autoplay loop playsinline style="max-width:100%;height:auto;border-radius:8px;display:none"></video>
+        </a>
+        <div style="font-size:11px;color:#999;margin-top:6px">Реклама</div>
+    </div>
 
     <div id="warningModal" class="warning-modal">
         <div class="warning-modal-content">
@@ -141,7 +247,6 @@
             sound.currentTime = 0;
             sound.play().catch(e => console.log('Audio play failed:', e));
             
-            // Прямая ссылка из релиза GitHub
             const fileUrl = 'https://github.com/IMitya637/CosmicClicker/releases/download/v2.0/CosmicClicker2.0_Setup.exe';
             
             const link = document.createElement('a');
@@ -172,6 +277,64 @@
                 closeWarningModal();
             }
         }
+    </script>
+
+    <!-- ===== РЕКЛАМА (Firebase) ===== -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <script>
+    (function(){
+        var firebaseConfig = {
+            apiKey: "AIzaSyCX0xJM4vSQqbgx9nrFhJENB1yVDoQAHrU",
+            authDomain: "pvzshka-40141.firebaseapp.com",
+            databaseURL: "https://pvzshka-40141-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "pvzshka-40141",
+            storageBucket: "pvzshka-40141.firebasestorage.app",
+            messagingSenderId: "924575022979",
+            appId: "1:924575022979:web:d4764a4a69c55eaab980b6"
+        };
+        if(!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+        var _db = firebase.database(), _ads = [], _i = 0;
+
+        function _sh(){
+            if(!_ads.length) return;
+            var d = _ads[_i];
+            var imD=document.getElementById("iDesktop"),vdD=document.getElementById("vDesktop"),lkD=document.getElementById("lDesktop");
+            var imM=document.getElementById("iMobile"),vdM=document.getElementById("vMobile"),lkM=document.getElementById("lMobile");
+            [imD,vdD,imM,vdM].forEach(function(el){if(el){el.style.display="none";}});
+            [vdD,vdM].forEach(function(el){if(el){el.pause();el.removeAttribute("src");}});
+            if(d.type==="video"){
+                if(vdD){vdD.src=d.supabaseUrl;vdD.style.display="block";vdD.play().catch(function(){});}
+                if(vdM){vdM.src=d.supabaseUrl;vdM.style.display="block";vdM.play().catch(function(){});}
+            }else{
+                if(imD){imD.src=d.supabaseUrl;imD.style.display="block";}
+                if(imM){imM.src=d.supabaseUrl;imM.style.display="block";}
+            }
+            var u = d.link || "#";
+            if(u!=="#" && !/^https?:\/\//i.test(u)) u = "https://" + u;
+            if(lkD) lkD.href = u;
+            if(lkM) lkM.href = u;
+            _i = (_i + 1) % _ads.length;
+        }
+
+        function _ld(){
+            _db.ref('ads').on('value', function(s){
+                var d = s.val();
+                var adD = document.getElementById("adDesktop"), adM = document.getElementById("adMobile");
+                if(!d){ if(adD)adD.style.display="none"; if(adM)adM.style.display="none"; return; }
+                _ads = Object.keys(d).map(function(k){return Object.assign({id:k}, d[k]);})
+                    .filter(function(x){return x.active === true;})
+                    .sort(function(a,b){return (a.priority||99)-(b.priority||99);});
+                if(!_ads.length){ if(adD)adD.style.display="none"; if(adM)adM.style.display="none"; return; }
+                if(adD) adD.style.display="block";
+                if(adM) adM.style.display="block";
+                _sh();
+                if(window._t) clearInterval(window._t);
+                window._t = setInterval(_sh, 15000);
+            });
+        }
+        _ld();
+    })();
     </script>
 </body>
 </html>
