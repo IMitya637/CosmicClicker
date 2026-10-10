@@ -11,8 +11,9 @@
     
     .page-wrapper {
         display: flex;
+        align-items: flex-start;      /* ← прижимаем к верху, не растягиваем */
         gap: 30px;
-        max-width: 100%;           /* растягиваем на всю ширину */
+        max-width: 100%;
         margin: 0 auto;
         padding: 0 30px;
         position: relative;
@@ -21,19 +22,19 @@
     .page-content {
         flex: 1;
         min-width: 0;
-        max-width: 900px;          /* контент не растягивается сильно */
-        margin-left: auto;         /* прижимаем контент к центру */
+        max-width: 900px;
+        margin-left: auto;
         margin-right: auto;
     }
     
-    /* РЕКЛАМА СПРАВА — прижата к правому краю */
+    /* РЕКЛАМА СПРАВА — прижата к правому краю, БЕЗ растягивания */
     .ad-sidebar {
         width: 450px;
         flex-shrink: 0;
         padding-top: 40px;
-        margin-left: auto;         /* ← прижимает к правому краю */
-        display: flex;
-        justify-content: flex-end; /* ← содержимое справа */
+        margin-left: auto;
+        align-self: flex-start;       /* ← не растягиваться по высоте */
+        display: block;               /* ← убираем flex */
     }
     .ad-sidebar .ad-box {
         display: none;
@@ -86,11 +87,11 @@
     @media (max-width: 1000px) {
         .page-wrapper { flex-direction: column; }
         .page-content { max-width: 100%; }
-        .ad-sidebar { display: none !important; width: auto; margin: 0; justify-content: center; }
+        .ad-sidebar { display: none !important; width: auto; margin: 0; }
         .ad-mobile { display: block !important; }
     }
     @media (min-width: 1001px) {
-        .ad-sidebar { display: flex !important; }
+        .ad-sidebar { display: block !important; }
         .ad-mobile { display: none !important; }
     }
     
