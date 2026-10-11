@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 <style>
     /* ===== ДОПОЛНИТЕЛЬНО: РЕКЛАМА + ОБЁРТКА ===== */
-    
+
     .page-wrapper {
         display: flex;
         align-items: flex-start;
@@ -26,8 +26,8 @@
         margin-left: auto;
         margin-right: auto;
     }
-    
-    /* РЕКЛАМА СПРАВА — прижата к правому краю, без растягивания */
+
+    /* РЕКЛАМА СПРАВА — прижата к правому краю */
     .ad-sidebar {
         width: 450px;
         flex-shrink: 0;
@@ -36,50 +36,18 @@
         align-self: flex-start;
         display: block;
     }
-    .ad-sidebar .ad-box {
-        display: none;
-        width: 100%;
-        background: rgba(26, 27, 31, 0.85);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(107, 70, 193, 0.3);
-        border-radius: 16px;
-        padding: 18px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        text-align: center;
-        position: sticky;
-        top: 20px;
-    }
-    .ad-sidebar .ad-box img,
-    .ad-sidebar .ad-box video {
-        width: 100% !important;
-        height: auto !important;
-        display: block;
-        border-radius: 12px;
-    }
-    
+    .ad-sidebar > a { display:block; }
+
     /* РЕКЛАМА СНИЗУ (телефон) */
     .ad-mobile {
         display: none;
         margin: 20px auto;
         max-width: 728px;
         text-align: center;
-        background: rgba(26, 27, 31, 0.85);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(107, 70, 193, 0.3);
-        border-radius: 16px;
-        padding: 16px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         position: relative;
         z-index: 10;
     }
-    .ad-mobile img,
-    .ad-mobile video {
-        width: 100% !important;
-        height: auto !important;
-        display: block;
-        border-radius: 12px;
-    }
-    
+
     /* Адаптив */
     @media (max-width: 1200px) {
         .ad-sidebar { width: 350px; }
@@ -94,7 +62,7 @@
         .ad-sidebar { display: block !important; }
         .ad-mobile { display: none !important; }
     }
-    
+
     /* Сброс отступов для секций внутри обёртки */
     .page-content .hero { margin: 40px auto; }
     .page-content .game-description,
@@ -114,7 +82,7 @@
 
     <!-- ОБЁРТКА: КОНТЕНТ + РЕКЛАМА -->
     <div class="page-wrapper">
-        
+
         <!-- КОНТЕНТ -->
         <div class="page-content">
 
@@ -229,13 +197,19 @@
         <!-- /КОНТЕНТ -->
 
         <!-- РЕКЛАМА СПРАВА (комп) -->
-        <div class="ad-sidebar">
-            <div class="ad-box" id="adDesktop">
-                <a id="lDesktop" href="#" target="_blank" rel="noopener" style="display:block">
-                    <img id="iDesktop" src="" alt="" style="max-width:100%;height:auto;border-radius:8px;display:none">
-                    <video id="vDesktop" muted autoplay loop playsinline style="max-width:100%;height:auto;border-radius:8px;display:none"></video>
+        <div class="ad-sidebar" id="alexbitAdDesktop" style="display:none;">
+            <a href="https://alexbit.page.gd/ads" target="_blank" rel="sponsored noopener"
+               style="display:block;background:#e9e9e9;color:#333;text-decoration:none;padding:8px 12px;border-radius:12px 12px 0 0;text-align:center;border-bottom:1px solid #d5d5d5;font-family:Arial,sans-serif;">
+                <span style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#444;">
+                    <span style="display:inline-block;width:6px;height:6px;background:#C70909;border-radius:50%;vertical-align:middle;margin-right:6px;"></span>ALEXBIT ADS
+                </span>
+            </a>
+            <div style="background:rgba(26,27,31,0.85);backdrop-filter:blur(10px);border:1px solid rgba(107,70,193,0.3);border-radius:0 0 16px 16px;padding:16px;box-shadow:0 2px 10px rgba(0,0,0,0.3);text-align:center;">
+                <a id="alexbitLDesktop" href="#" target="_blank" rel="noopener" style="display:block;">
+                    <img id="alexbitIDesktop" src="" alt="" style="width:100%;height:auto;border-radius:12px;display:none;">
+                    <video id="alexbitVDesktop" muted autoplay loop playsinline style="width:100%;height:auto;border-radius:12px;display:none;"></video>
                 </a>
-                <div style="font-size:11px;color:#999;margin-top:6px">Реклама</div>
+                <div style="font-size:11px;color:#999;margin-top:6px;">Реклама</div>
             </div>
         </div>
 
@@ -243,12 +217,20 @@
     <!-- /ОБЁРТКА -->
 
     <!-- РЕКЛАМА СНИЗУ (телефон) -->
-    <div class="ad-mobile" id="adMobile">
-        <a id="lMobile" href="#" target="_blank" rel="noopener" style="display:block">
-            <img id="iMobile" src="" alt="" style="max-width:100%;height:auto;border-radius:8px;display:none">
-            <video id="vMobile" muted autoplay loop playsinline style="max-width:100%;height:auto;border-radius:8px;display:none"></video>
+    <div class="ad-mobile" id="alexbitAdMobile" style="display:none;">
+        <a href="https://alexbit.page.gd/ads" target="_blank" rel="sponsored noopener"
+           style="display:block;background:#e9e9e9;color:#333;text-decoration:none;padding:8px 12px;border-radius:12px 12px 0 0;text-align:center;border-bottom:1px solid #d5d5d5;font-family:Arial,sans-serif;">
+            <span style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#444;">
+                <span style="display:inline-block;width:6px;height:6px;background:#C70909;border-radius:50%;vertical-align:middle;margin-right:6px;"></span>ALEXBIT ADS
+            </span>
         </a>
-        <div style="font-size:11px;color:#999;margin-top:6px">Реклама</div>
+        <div style="background:rgba(26,27,31,0.85);backdrop-filter:blur(10px);border:1px solid rgba(107,70,193,0.3);border-radius:0 0 16px 16px;padding:16px;box-shadow:0 2px 10px rgba(0,0,0,0.3);text-align:center;">
+            <a id="alexbitLMobile" href="#" target="_blank" rel="noopener" style="display:block;">
+                <img id="alexbitIMobile" src="" alt="" style="width:100%;height:auto;border-radius:12px;display:none;">
+                <video id="alexbitVMobile" muted autoplay loop playsinline style="width:100%;height:auto;border-radius:12px;display:none;"></video>
+            </a>
+            <div style="font-size:11px;color:#999;margin-top:6px;">Реклама</div>
+        </div>
     </div>
 
     <div id="warningModal" class="warning-modal">
@@ -271,31 +253,31 @@
             const sound = document.getElementById('downloadSound');
             sound.currentTime = 0;
             sound.play().catch(e => console.log('Audio play failed:', e));
-            
+
             const fileUrl = 'https://github.com/IMitya637/CosmicClicker/releases/download/v2.0/CosmicClicker2.0_Setup.exe';
-            
+
             const link = document.createElement('a');
             link.href = fileUrl;
             link.download = 'CosmicClicker2.0_Setup.exe';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            
+
             setTimeout(() => {
                 showWarningModal();
             }, 500);
         }
-        
+
         function showWarningModal() {
             const modal = document.getElementById('warningModal');
             modal.classList.add('show');
         }
-        
+
         function closeWarningModal() {
             const modal = document.getElementById('warningModal');
             modal.classList.remove('show');
         }
-        
+
         window.onclick = function(event) {
             const modal = document.getElementById('warningModal');
             if (event.target === modal) {
@@ -304,62 +286,154 @@
         }
     </script>
 
-    <!-- ===== РЕКЛАМА (Firebase) ===== -->
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <!-- ===== ALEXBIT ADS — универсальный рекламный виджет ===== -->
     <script>
     (function(){
-        var firebaseConfig = {
-            apiKey: "AIzaSyCX0xJM4vSQqbgx9nrFhJENB1yVDoQAHrU",
-            authDomain: "pvzshka-40141.firebaseapp.com",
-            databaseURL: "https://pvzshka-40141-default-rtdb.europe-west1.firebasedatabase.app",
-            projectId: "pvzshka-40141",
-            storageBucket: "pvzshka-40141.firebasestorage.app",
-            messagingSenderId: "924575022979",
-            appId: "1:924575022979:web:d4764a4a69c55eaab980b6"
-        };
-        if(!firebase.apps.length) firebase.initializeApp(firebaseConfig);
-        var _db = firebase.database(), _ads = [], _i = 0;
+      var FB_CONFIG = {
+        apiKey: "AIzaSyCX0xJM4vSQqbgx9nrFhJENB1yVDoQAHrU",
+        authDomain: "pvzshka-40141.firebaseapp.com",
+        databaseURL: "https://pvzshka-40141-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "pvzshka-40141",
+        storageBucket: "pvzshka-40141.firebasestorage.app",
+        messagingSenderId: "924575022979",
+        appId: "1:924575022979:web:d4764a4a69c55eaab980b6"
+      };
+      var ADS_PATH   = 'ads';
+      var ROTATE_MS  = 10000;      // ротация 10 секунд
+      var MOBILE_MAX = 1000;
+      var PROMO_URL  = 'https://alexbit.page.gd/ads';
 
-        function _sh(){
-            if(!_ads.length) return;
-            var d = _ads[_i];
-            var imD=document.getElementById("iDesktop"),vdD=document.getElementById("vDesktop"),lkD=document.getElementById("lDesktop");
-            var imM=document.getElementById("iMobile"),vdM=document.getElementById("vMobile"),lkM=document.getElementById("lMobile");
-            [imD,vdD,imM,vdM].forEach(function(el){if(el){el.style.display="none";}});
-            [vdD,vdM].forEach(function(el){if(el){el.pause();el.removeAttribute("src");}});
-            if(d.type==="video"){
-                if(vdD){vdD.src=d.supabaseUrl;vdD.style.display="block";vdD.play().catch(function(){});}
-                if(vdM){vdM.src=d.supabaseUrl;vdM.style.display="block";vdM.play().catch(function(){});}
-            }else{
-                if(imD){imD.src=d.supabaseUrl;imD.style.display="block";}
-                if(imM){imM.src=d.supabaseUrl;imM.style.display="block";}
-            }
-            var u = d.link || "#";
-            if(u!=="#" && !/^https?:\/\//i.test(u)) u = "https://" + u;
-            if(lkD) lkD.href = u;
-            if(lkM) lkM.href = u;
-            _i = (_i + 1) % _ads.length;
-        }
+      function loadScript(src){
+        return new Promise(function(resolve, reject){
+          var s = document.createElement('script');
+          s.src = src;
+          s.onload = resolve;
+          s.onerror = function(){ reject(new Error('Failed to load: ' + src)); };
+          document.head.appendChild(s);
+        });
+      }
+      function ensureFirebase(){
+        return new Promise(function(resolve, reject){
+          if (window.firebase && window.firebase.apps) return resolve();
+          Promise.all([
+            loadScript('https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js'),
+            loadScript('https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js')
+          ]).then(resolve).catch(reject);
+        });
+      }
+      function normalizeUrl(u){
+        if (!u || u === '#') return '#';
+        if (!/^https?:\/\//i.test(u)) return 'https://' + u;
+        return u;
+      }
+      function isMobile(){ return window.innerWidth <= MOBILE_MAX; }
 
-        function _ld(){
-            _db.ref('ads').on('value', function(s){
-                var d = s.val();
-                var adD = document.getElementById("adDesktop"), adM = document.getElementById("adMobile");
-                if(!d){ if(adD)adD.style.display="none"; if(adM)adM.style.display="none"; return; }
-                _ads = Object.keys(d).map(function(k){return Object.assign({id:k}, d[k]);})
-                    .filter(function(x){return x.active === true;})
-                    .sort(function(a,b){return (a.priority||99)-(b.priority||99);});
-                if(!_ads.length){ if(adD)adD.style.display="none"; if(adM)adM.style.display="none"; return; }
-                if(adD) adD.style.display="block";
-                if(adM) adM.style.display="block";
-                _sh();
-                if(window._t) clearInterval(window._t);
-                window._t = setInterval(_sh, 15000);
-            });
+      var els = {
+        desktopWrap: document.getElementById('alexbitAdDesktop'),
+        mobileWrap:  document.getElementById('alexbitAdMobile'),
+        iD: document.getElementById('alexbitIDesktop'),
+        vD: document.getElementById('alexbitVDesktop'),
+        lD: document.getElementById('alexbitLDesktop'),
+        iM: document.getElementById('alexbitIMobile'),
+        vM: document.getElementById('alexbitVMobile'),
+        lM: document.getElementById('alexbitLMobile')
+      };
+
+      var _ads = [], _i = 0, _timer = null;
+
+      function applyLayout(){
+        if (!_ads.length){
+          els.desktopWrap.style.display = 'none';
+          els.mobileWrap.style.display  = 'none';
+          return;
         }
-        _ld();
+        if (isMobile()){
+          els.desktopWrap.style.display = 'none';
+          els.mobileWrap.style.display  = 'block';
+        } else {
+          els.desktopWrap.style.display = 'block';
+          els.mobileWrap.style.display  = 'none';
+        }
+      }
+      window.addEventListener('resize', applyLayout);
+
+      function clearMedia(){
+        [els.iD, els.iM].forEach(function(img){
+          if (img){ img.style.display = 'none'; img.removeAttribute('src'); }
+        });
+        [els.vD, els.vM].forEach(function(v){
+          if (v){ v.pause(); v.removeAttribute('src'); v.style.display = 'none'; }
+        });
+      }
+
+      function showAd(ad){
+        clearMedia();
+        var img = isMobile() ? els.iM : els.iD;
+        var vid = isMobile() ? els.vM : els.vD;
+        var lnk = isMobile() ? els.lM : els.lD;
+
+        if (ad.type === 'video' && ad.supabaseUrl){
+          if (vid){
+            vid.src = ad.supabaseUrl;
+            vid.style.display = 'block';
+            vid.play().catch(function(){});
+          }
+        } else if (ad.supabaseUrl){
+          if (img){
+            img.src = ad.supabaseUrl;
+            img.style.display = 'block';
+          }
+        }
+        if (lnk) lnk.href = normalizeUrl(ad.link);
+      }
+
+      function rotate(){
+        if (!_ads.length) return;
+        showAd(_ads[_i]);
+        _i = (_i + 1) % _ads.length;
+      }
+      function startRotation(){
+        if (_timer) clearInterval(_timer);
+        _timer = setInterval(rotate, ROTATE_MS);
+      }
+
+      document.addEventListener('visibilitychange', function(){
+        if (document.hidden){
+          if (_timer){ clearInterval(_timer); _timer = null; }
+        } else {
+          if (_ads.length) startRotation();
+        }
+      });
+
+      function startListening(){
+        if (!firebase.apps.length) firebase.initializeApp(FB_CONFIG);
+        var db = firebase.database();
+        db.ref(ADS_PATH).on('value', function(snap){
+          var data = snap.val();
+          if (!data){ _ads = []; applyLayout(); return; }
+          _ads = Object.keys(data)
+            .map(function(k){ return Object.assign({ id: k }, data[k]); })
+            .filter(function(x){ return x.active === true && x.supabaseUrl; })
+            .sort(function(a, b){ return (a.priority || 99) - (b.priority || 99); });
+
+          if (!_ads.length){ applyLayout(); return; }
+          _i = 0;
+          applyLayout();
+          rotate();
+          startRotation();
+        });
+      }
+
+      ensureFirebase()
+        .then(startListening)
+        .catch(function(err){
+          console.warn('[AlexBit Ads] Firebase не загрузился:', err);
+          els.desktopWrap.style.display = 'none';
+          els.mobileWrap.style.display  = 'none';
+        });
     })();
     </script>
+    <!-- ===== /ALEXBIT ADS ===== -->
+
 </body>
 </html>
