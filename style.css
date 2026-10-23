@@ -13,43 +13,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== Секция рекламы ALEXBIT ADS ===== */
-.ad-section {
-    max-width: 1000px;
-    margin: 60px auto;
-    padding: 0 40px;
-    position: relative;
-    z-index: 10;
-}
-
-.ad-section .news-card {
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.ad-section .news-card:hover {
-    border-color: rgba(107, 70, 193, 0.6);
-}
-
-.ad-section #alexbitLNews {
-    transition: transform 0.3s ease;
-}
-
-.ad-section #alexbitLNews:hover {
-    transform: scale(1.01);
-}
-
-.ad-section #alexbitINews,
-.ad-section #alexbitVNews {
-    object-fit: cover;
-}
-
-@media (max-width: 700px) {
-    .ad-section {
-        padding: 0 20px;
-        margin: 40px auto;
-    }
-}
-
 /* Космический фон */
 .cosmic-background {
     position: fixed;
@@ -478,7 +441,7 @@ body {
     letter-spacing: 0.3px;
 }
 
-/* Новая секция: Почему стоит поиграть? */
+/* Секция: Почему стоит поиграть? */
 .why-play {
     max-width: 1200px;
     margin: 80px auto;
@@ -601,6 +564,36 @@ body {
     font-size: 16px;
     color: #c0c0c0;
     line-height: 1.5;
+}
+
+/* ===== Секция рекламы ALEXBIT ADS ===== */
+.ad-section {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.ad-section .news-card {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.ad-section .news-card:hover {
+    border-color: rgba(107, 70, 193, 0.6);
+}
+
+.ad-section #alexbitLNews {
+    transition: transform 0.3s ease;
+}
+
+.ad-section #alexbitLNews:hover {
+    transform: scale(1.01);
+}
+
+.ad-section #alexbitINews,
+.ad-section #alexbitVNews {
+    object-fit: cover;
 }
 
 /* Футер */
@@ -761,6 +754,10 @@ body {
         grid-template-columns: 1fr;
         gap: 20px;
     }
+    
+    .ad-section {
+        padding: 0 24px;
+    }
 }
 
 @media (max-width: 700px) {
@@ -817,5 +814,14 @@ body {
     
     .warning-modal-content p {
         font-size: 16px;
+    }
+    
+    .ad-section {
+        padding: 0 20px;
+        margin: 60px auto;
+    }
+    
+    .ad-section .news-card > div:last-child {
+        padding: 16px 18px 18px !important;
     }
 }
