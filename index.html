@@ -23,61 +23,170 @@
         </div>
     </section>
 
-    <!-- ===== РЕКЛАМА ALEXBIT ADS (адаптирована под тёмную тему) ===== -->
-    <section class="ad-section">
-        <div id="alexbitAdNewsCard" class="news-card" style="
-            background: rgba(26, 27, 31, 0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(107, 70, 193, 0.3);
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            margin-bottom: 14px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            color: #e5e5e5;
-            line-height: 1.55;
-        ">
-          <!-- Плашка ALEXBIT ADS -->
-          <a href="https://alexbit.page.gd/ads" target="_blank" rel="sponsored noopener"
-             style="
-                display: block;
-                background: rgba(107, 70, 193, 0.15);
-                color: #b794f4;
-                text-decoration: none;
-                padding: 10px 14px;
-                text-align: center;
-                border-bottom: 1px solid rgba(107, 70, 193, 0.3);
-                font-weight: 700;
-                font-size: 12px;
-                letter-spacing: 2px;
-                text-transform: uppercase;
-                transition: background 0.2s ease;
-             "
-             onmouseover="this.style.background='rgba(107,70,193,0.25)'"
-             onmouseout="this.style.background='rgba(107,70,193,0.15)'">
-            <span style="display:inline-block;width:6px;height:6px;background:#C70909;border-radius:50%;vertical-align:middle;margin-right:6px;box-shadow:0 0 6px #C70909;"></span>
-            ALEXBIT ADS
-          </a>
+    <!-- ===== НАЧАЛО: РЕКЛАМА ALEXBIT ADS (АДАПТИВНАЯ) ===== -->
+    <div id="alexbitAdDesktop" style="display:none; position:fixed; right:20px; top:100px; width:300px; max-width:30vw; z-index:9999;">
+      <!-- Плашка -->
+      <a href="https://alexbit.page.gd/ads" target="_blank" rel="sponsored noopener" style="display:block;background:rgba(107,70,193,0.2);color:#b794f4;text-decoration:none;padding:8px 12px;border-radius:12px 12px 0 0;text-align:center;border-bottom:1px solid rgba(107,70,193,0.3);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;">
+        <span style="display:inline-block;width:6px;height:6px;background:#C70909;border-radius:50%;vertical-align:middle;margin-right:6px;box-shadow:0 0 6px #C70909;"></span>ALEXBIT ADS
+      </a>
+      <!-- Сама реклама -->
+      <div style="background:rgba(26,27,31,0.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:0 0 16px 16px;padding:16px;box-shadow:0 20px 40px rgba(0,0,0,0.3);border:1px solid rgba(107,70,193,0.3);border-top:none;text-align:center;">
+        <a id="alexbitLDesktop" href="#" target="_blank" rel="noopener" style="display:block;">
+          <img id="alexbitIDesktop" src="" alt="" style="width:100%;height:auto;border-radius:12px;display:none;">
+          <video id="alexbitVDesktop" muted autoplay loop playsinline style="width:100%;height:auto;border-radius:12px;display:none;"></video>
+        </a>
+        <div style="font-size:11px;color:#808080;margin-top:6px;">Реклама</div>
+      </div>
+    </div>
 
-          <!-- Рекламный контент -->
-          <div style="padding: 16px 18px 18px;">
-            <a id="alexbitLNews" href="#" target="_blank" rel="noopener"
-               style="display: flex; border-radius: 16px; overflow: hidden; background: rgba(0, 0, 0, 0.35); min-height: 150px; align-items: center; justify-content: center; border: 1px solid rgba(107, 70, 193, 0.15);">
-              <img id="alexbitINews" src="" alt="" style="width: 100%; height: auto; display: none; border-radius: 16px;">
-              <video id="alexbitVNews" muted autoplay loop playsinline style="width: 100%; height: auto; display: none; border-radius: 16px;"></video>
-            </a>
+    <div id="alexbitAdMobile" style="display:none;margin:20px auto;max-width:728px;padding:0 10px;box-sizing:border-box;">
+      <!-- Плашка -->
+      <a href="https://alexbit.page.gd/ads" target="_blank" rel="sponsored noopener" style="display:block;background:rgba(107,70,193,0.2);color:#b794f4;text-decoration:none;padding:8px 12px;border-radius:12px 12px 0 0;text-align:center;border-bottom:1px solid rgba(107,70,193,0.3);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;">
+        <span style="display:inline-block;width:6px;height:6px;background:#C70909;border-radius:50%;vertical-align:middle;margin-right:6px;box-shadow:0 0 6px #C70909;"></span>ALEXBIT ADS
+      </a>
+      <!-- Сама реклама -->
+      <div style="background:rgba(26,27,31,0.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:0 0 16px 16px;padding:16px;box-shadow:0 20px 40px rgba(0,0,0,0.3);border:1px solid rgba(107,70,193,0.3);border-top:none;text-align:center;">
+        <a id="alexbitLMobile" href="#" target="_blank" rel="noopener" style="display:block;">
+          <img id="alexbitIMobile" src="" alt="" style="width:100%;height:auto;border-radius:12px;display:none;">
+          <video id="alexbitVMobile" muted autoplay loop playsinline style="width:100%;height:auto;border-radius:12px;display:none;"></video>
+        </a>
+        <div style="font-size:11px;color:#808080;margin-top:6px;">Реклама</div>
+      </div>
+    </div>
 
-            <div style="
-                margin-top: 12px;
-                font-size: 11px;
-                color: #808080;
-                text-align: center;
-                letter-spacing: 0.5px;
-            ">Реклама</div>
-          </div>
-        </div>
-    </section>
+    <script>
+    (function(){
+      var FB_CONFIG = {
+        apiKey: "AIzaSyCX0xJM4vSQqbgx9nrFhJENB1yVDoQAHrU",
+        authDomain: "pvzshka-40141.firebaseapp.com",
+        databaseURL: "https://pvzshka-40141-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "pvzshka-40141",
+        storageBucket: "pvzshka-40141.firebasestorage.app",
+        messagingSenderId: "924575022979",
+        appId: "1:924575022979:web:d4764a4a69c55eaab980b6"
+      };
+      var ADS_PATH = 'ads';
+      var ROTATE_MS = 10000;
+      var MOBILE_MAX = 1000;
+
+      var els = {
+        desk: document.getElementById('alexbitAdDesktop'),
+        mob:  document.getElementById('alexbitAdMobile'),
+        iD: document.getElementById('alexbitIDesktop'),
+        vD: document.getElementById('alexbitVDesktop'),
+        lD: document.getElementById('alexbitLDesktop'),
+        iM: document.getElementById('alexbitIMobile'),
+        vM: document.getElementById('alexbitVMobile'),
+        lM: document.getElementById('alexbitLMobile')
+      };
+
+      var _ads = [], _i = 0, _timer = null;
+
+      function isMobile(){ return window.innerWidth <= MOBILE_MAX; }
+
+      function applyLayout(){
+        if (!_ads.length){
+          els.desk.style.display = 'none';
+          els.mob.style.display = 'none';
+          return;
+        }
+        if (isMobile()){
+          els.desk.style.display = 'none';
+          els.mob.style.display = 'block';
+        } else {
+          els.desk.style.display = 'block';
+          els.mob.style.display = 'none';
+        }
+      }
+      window.addEventListener('resize', applyLayout);
+
+      function normalizeUrl(u){
+        if (!u || u === '#') return '#';
+        if (!/^https?:\/\//i.test(u)) return 'https://' + u;
+        return u;
+      }
+
+      function showAd(ad){
+        [els.iD, els.iM].forEach(img => { if (img) { img.style.display = 'none'; img.removeAttribute('src'); } });
+        [els.vD, els.vM].forEach(vid => { if (vid) { vid.pause(); vid.removeAttribute('src'); vid.style.display = 'none'; } });
+
+        var isM = isMobile();
+        var img = isM ? els.iM : els.iD;
+        var vid = isM ? els.vM : els.vD;
+        var lnk = isM ? els.lM : els.lD;
+
+        if (ad.type === 'video' && ad.supabaseUrl){
+          if (vid) { vid.src = ad.supabaseUrl; vid.style.display = 'block'; vid.play().catch(()=>{}); }
+        } else if (ad.supabaseUrl){
+          if (img) { img.src = ad.supabaseUrl; img.style.display = 'block'; }
+        }
+        if (lnk) lnk.href = normalizeUrl(ad.link);
+      }
+
+      function rotate(){
+        if (!_ads.length) return;
+        showAd(_ads[_i]);
+        _i = (_i + 1) % _ads.length;
+      }
+
+      function startRotation(){
+        if (_timer) clearInterval(_timer);
+        _timer = setInterval(rotate, ROTATE_MS);
+      }
+
+      document.addEventListener('visibilitychange', function(){
+        if (document.hidden){
+          if (_timer){ clearInterval(_timer); _timer = null; }
+        } else {
+          if (_ads.length) startRotation();
+        }
+      });
+
+      function loadScript(src){
+        return new Promise((resolve, reject) => {
+          var s = document.createElement('script');
+          s.src = src;
+          s.onload = resolve;
+          s.onerror = () => reject(new Error('Failed to load ' + src));
+          document.head.appendChild(s);
+        });
+      }
+
+      function ensureFirebase(){
+        return new Promise((resolve, reject) => {
+          if (window.firebase && window.firebase.apps) return resolve();
+          Promise.all([
+            loadScript('https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js'),
+            loadScript('https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js')
+          ]).then(resolve).catch(reject);
+        });
+      }
+
+      ensureFirebase().then(() => {
+        if (!firebase.apps.length) firebase.initializeApp(FB_CONFIG);
+        var db = firebase.database();
+        db.ref(ADS_PATH).on('value', snap => {
+          var data = snap.val();
+          if (!data){ _ads = []; applyLayout(); return; }
+          _ads = Object.keys(data)
+            .map(k => Object.assign({ id: k }, data[k]))
+            .filter(x => x.active === true && x.supabaseUrl)
+            .sort((a,b) => (a.priority || 99) - (b.priority || 99));
+
+          if (!_ads.length){ applyLayout(); return; }
+          
+          _i = 0;
+          applyLayout();
+          rotate();
+          startRotation();
+        });
+      }).catch(err => {
+        console.warn('[AlexBit Ads] Firebase не загрузился:', err);
+        els.desk.style.display = 'none';
+        els.mob.style.display = 'none';
+      });
+    })();
+    </script>
     <!-- ===== КОНЕЦ: РЕКЛАМА ALEXBIT ADS ===== -->
 
     <section class="game-description">
@@ -229,123 +338,6 @@
             }
         }
     </script>
-
-    <!-- ===== СКРИПТ РЕКЛАМЫ (ротация 10 сек) ===== -->
-    <script>
-    (function(){
-      var FB_CONFIG = {
-        apiKey: "AIzaSyCX0xJM4vSQqbgx9nrFhJENB1yVDoQAHrU",
-        authDomain: "pvzshka-40141.firebaseapp.com",
-        databaseURL: "https://pvzshka-40141-default-rtdb.europe-west1.firebasedatabase.app",
-        projectId: "pvzshka-40141",
-        storageBucket: "pvzshka-40141.firebasestorage.app",
-        messagingSenderId: "924575022979",
-        appId: "1:924575022979:web:d4764a4a69c55eaab980b6"
-      };
-      var ADS_PATH = 'ads';
-      var ROTATE_MS = 10000;
-
-      var wrap = document.getElementById('alexbitAdNewsCard');
-      var img  = document.getElementById('alexbitINews');
-      var vid  = document.getElementById('alexbitVNews');
-      var lnk  = document.getElementById('alexbitLNews');
-
-      if (!wrap || !img || !vid || !lnk) return;
-
-      var _ads = [], _i = 0, _timer = null;
-
-      function normalizeUrl(u){
-        if (!u || u === '#') return '#';
-        if (!/^https?:\/\//i.test(u)) return 'https://' + u;
-        return u;
-      }
-
-      function showAd(ad){
-        img.style.display = 'none';
-        img.removeAttribute('src');
-        vid.pause();
-        vid.removeAttribute('src');
-        vid.style.display = 'none';
-
-        if (ad.type === 'video' && ad.supabaseUrl){
-          vid.src = ad.supabaseUrl;
-          vid.style.display = 'block';
-          vid.play().catch(function(){});
-        } else if (ad.supabaseUrl){
-          img.src = ad.supabaseUrl;
-          img.style.display = 'block';
-        }
-
-        lnk.href = normalizeUrl(ad.link);
-      }
-
-      function rotate(){
-        if (!_ads.length) return;
-        showAd(_ads[_i]);
-        _i = (_i + 1) % _ads.length;
-      }
-
-      function startRotation(){
-        if (_timer) clearInterval(_timer);
-        _timer = setInterval(rotate, ROTATE_MS);
-      }
-
-      document.addEventListener('visibilitychange', function(){
-        if (document.hidden){
-          if (_timer){ clearInterval(_timer); _timer = null; }
-        } else {
-          if (_ads.length) startRotation();
-        }
-      });
-
-      function loadScript(src){
-        return new Promise(function(resolve, reject){
-          var s = document.createElement('script');
-          s.src = src;
-          s.onload = resolve;
-          s.onerror = function(){ reject(new Error('Failed to load: ' + src)); };
-          document.head.appendChild(s);
-        });
-      }
-
-      function ensureFirebase(){
-        return new Promise(function(resolve, reject){
-          if (window.firebase && window.firebase.apps) return resolve();
-          Promise.all([
-            loadScript('https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js'),
-            loadScript('https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js')
-          ]).then(resolve).catch(reject);
-        });
-      }
-
-      ensureFirebase()
-        .then(function(){
-          if (!firebase.apps.length) firebase.initializeApp(FB_CONFIG);
-          var db = firebase.database();
-          db.ref(ADS_PATH).on('value', function(snap){
-            var data = snap.val();
-            if (!data){ wrap.style.display = 'none'; return; }
-
-            _ads = Object.keys(data)
-              .map(function(k){ return Object.assign({ id: k }, data[k]); })
-              .filter(function(x){ return x.active === true && x.supabaseUrl; })
-              .sort(function(a, b){ return (a.priority || 99) - (b.priority || 99); });
-
-            if (!_ads.length){ wrap.style.display = 'none'; return; }
-
-            _i = 0;
-            wrap.style.display = '';
-            rotate();
-            startRotation();
-          });
-        })
-        .catch(function(err){
-          console.warn('[AlexBit Ads] Firebase не загрузился:', err);
-          wrap.style.display = 'none';
-        });
-    })();
-    </script>
-    <!-- ===== КОНЕЦ: СКРИПТ РЕКЛАМЫ ===== -->
 
     <!-- ===== УНИВЕРСАЛЬНАЯ ЗАЩИТА ALEXBIT ===== -->
     <style>
