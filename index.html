@@ -6,73 +6,6 @@
     <title>Cosmic Clicker | MoonLight TM</title>
     <link rel="icon" href="CosmicClicker.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-<style>
-    /* ===== ДОПОЛНИТЕЛЬНО: РЕКЛАМА + ОБЁРТКА ===== */
-
-    .page-wrapper {
-        display: flex;
-        align-items: flex-start;
-        gap: 30px;
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 0 30px;
-        position: relative;
-        z-index: 10;
-    }
-    .page-content {
-        flex: 1;
-        min-width: 0;
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* РЕКЛАМА СПРАВА — прижата к правому краю */
-    .ad-sidebar {
-        width: 450px;
-        flex-shrink: 0;
-        padding-top: 40px;
-        margin-left: auto;
-        align-self: flex-start;
-        display: block;
-    }
-    .ad-sidebar > a { display:block; }
-
-    /* РЕКЛАМА СНИЗУ (телефон) */
-    .ad-mobile {
-        display: none;
-        margin: 20px auto;
-        max-width: 728px;
-        text-align: center;
-        position: relative;
-        z-index: 10;
-    }
-
-    /* Адаптив */
-    @media (max-width: 1200px) {
-        .ad-sidebar { width: 350px; }
-    }
-    @media (max-width: 1000px) {
-        .page-wrapper { flex-direction: column; }
-        .page-content { max-width: 100%; }
-        .ad-sidebar { display: none !important; width: auto; margin: 0; }
-        .ad-mobile { display: block !important; }
-    }
-    @media (min-width: 1001px) {
-        .ad-sidebar { display: block !important; }
-        .ad-mobile { display: none !important; }
-    }
-
-    /* Сброс отступов для секций внутри обёртки */
-    .page-content .hero { margin: 40px auto; }
-    .page-content .game-description,
-    .page-content .changelog,
-    .page-content .why-play,
-    .page-content .faq {
-        max-width: 100%;
-        padding: 0;
-    }
-</style>
 </head>
 <body>
     <div class="cosmic-background">
@@ -80,158 +13,164 @@
         <div class="nebula-layer"></div>
     </div>
 
-    <!-- ОБЁРТКА: КОНТЕНТ + РЕКЛАМА -->
-    <div class="page-wrapper">
-
-        <!-- КОНТЕНТ -->
-        <div class="page-content">
-
-            <section class="hero">
-                <div class="hero-left">
-                    <h1>Cosmic Clicker</h1>
-                    <p>Исследуйте бескрайний космос, открывайте новые миры и становитесь легендой всей вселенной!</p>
-                    <button class="download-button" onclick="downloadGame()">
-                        Скачать 🚀
-                    </button>
-                </div>
-            </section>
-
-            <section class="game-description">
-                <div class="description-card">
-                    <div class="description-image-wrapper">
-                        <img src="Баннер.png" alt="Cosmic Clicker" class="description-image">
-                    </div>
-                    <div class="description-text-wrapper">
-                        <p class="description-text">
-                            CosmicClicker — это крутая космическая кликер игра, в которой не заскучаешь! Много различного функционала, космическая тематика, расслабляющая музыка и много другого! В игре восемь планет, как в реальной жизни, а именно: Меркурий, Венера, Земля, Марс, Юпитер, Сатурн, Уран и Нептун. А дальше узнаете, когда попробуете эту замечательную игру!
-                        </p>
-                        <p class="description-love">
-                            Сделано с космической любовью — MoonLight *553578*
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="changelog">
-                <div class="changelog-card">
-                    <h2>Нововведения и исправления</h2>
-                    <p class="changelog-text">
-                        Новая анимация при запуске игры; новое окно - Ежедневные задания; переделана система сохранений; новое окно - Сохранения; сброс игры теперь в окне сохранений; добавлен новый звук - звук выполнения ежедневного задания; в магазине появились пропуски времени - 6 часов и 12 часов; исправлена ошибка в окне бустов
-                    </p>
-                </div>
-            </section>
-
-            <section class="why-play">
-                <div class="why-play-card">
-                    <h2>✨ Почему стоит поиграть?</h2>
-                    <div class="reasons-grid">
-                        <div class="reason">
-                            <span class="reason-icon">🪐</span>
-                            <h3>8 уникальных планет</h3>
-                            <p>От Меркурия до Нептуна — каждая планета приближают вас к владению вселенной!</p>
-                        </div>
-                        <div class="reason">
-                            <span class="reason-icon">🎵</span>
-                            <h3>Расслабляющая музыка</h3>
-                            <p>Погрузитесь в атмосферу космоса с нашим саундтреком</p>
-                        </div>
-                        <div class="reason">
-                            <span class="reason-icon">📅</span>
-                            <h3>Ежедневные задания</h3>
-                            <p>Новые ежедневные задания — получайте крутые бонусы</p>
-                        </div>
-                        <div class="reason">
-                            <span class="reason-icon">💾</span>
-                            <h3>Умные сохранения</h3>
-                            <p>Ваш прогресс всегда под защитой — несколько слотов сохранений</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="faq">
-                <div class="faq-card">
-                    <h2>❓ Часто задаваемые вопросы</h2>
-                    <div class="faq-list">
-                        <div class="faq-item">
-                            <div class="faq-question">🔹 Как сохранить прогресс?</div>
-                            <div class="faq-answer">Прогресс сохраняется автоматически! Также вы можете создать ещё сохранения</div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">🔹 Игра бесплатна?</div>
-                            <div class="faq-answer">Да, Cosmic Clicker полностью бесплатен! Никаких скрытых платежей и донатов</div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">🔹 Будут ли ещё обновления?</div>
-                            <div class="faq-answer">Да, они конечно будут! Есть много контента для игры</div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">🔹 Как связаться с разработчиком?</div>
-                            <div class="faq-answer">Все контакты есть в футере — Telegram, YouTube и Instagram. Пишите, всегда на связи!</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <footer class="footer">
-                <div class="footer-content">
-                    <div class="footer-column">
-                        <h4>📞 Тех. поддержка</h4>
-                        <a href="https://t.me/IMitya637" target="_blank">Telegram — @IMitya637</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>🎬 YouTube</h4>
-                        <a href="http://www.youtube.com/@IMityaYT" target="_blank">@IMityaYT</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>📷 Instagram</h4>
-                        <a href="https://www.instagram.com/imitya_637?igsh=Ym02Z3kyd2F0YnQ3" target="_blank">@imitya_637</a>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    © 2026 Cosmic Clicker | MoonLight TM. Все права защищены
-                </div>
-            </footer>
-
+    <section class="hero">
+        <div class="hero-left">
+            <h1>Cosmic Clicker</h1>
+            <p>Исследуйте бескрайний космос, открывайте новые миры и становитесь легендой всей вселенной!</p>
+            <button class="download-button" onclick="downloadGame()">
+                Скачать 🚀
+            </button>
         </div>
-        <!-- /КОНТЕНТ -->
+    </section>
 
-        <!-- РЕКЛАМА СПРАВА (комп) -->
-        <div class="ad-sidebar" id="alexbitAdDesktop" style="display:none;">
-            <a href="https://alexbit.page.gd/ads" target="_blank" rel="sponsored noopener"
-               style="display:block;background:#e9e9e9;color:#333;text-decoration:none;padding:8px 12px;border-radius:12px 12px 0 0;text-align:center;border-bottom:1px solid #d5d5d5;font-family:Arial,sans-serif;">
-                <span style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#444;">
-                    <span style="display:inline-block;width:6px;height:6px;background:#C70909;border-radius:50%;vertical-align:middle;margin-right:6px;"></span>ALEXBIT ADS
-                </span>
-            </a>
-            <div style="background:rgba(26,27,31,0.85);backdrop-filter:blur(10px);border:1px solid rgba(107,70,193,0.3);border-radius:0 0 16px 16px;padding:16px;box-shadow:0 2px 10px rgba(0,0,0,0.3);text-align:center;">
-                <a id="alexbitLDesktop" href="#" target="_blank" rel="noopener" style="display:block;">
-                    <img id="alexbitIDesktop" src="" alt="" style="width:100%;height:auto;border-radius:12px;display:none;">
-                    <video id="alexbitVDesktop" muted autoplay loop playsinline style="width:100%;height:auto;border-radius:12px;display:none;"></video>
-                </a>
-                <div style="font-size:11px;color:#999;margin-top:6px;">Реклама</div>
+    <section class="game-description">
+        <div class="description-card">
+            <div class="description-image-wrapper">
+                <img src="Баннер.png" alt="Cosmic Clicker" class="description-image">
+            </div>
+            <div class="description-text-wrapper">
+                <p class="description-text">
+                    CosmicClicker — это крутая космическая кликер игра, в которой не заскучаешь! Много различного функционала, космическая тематика, расслабляющая музыка и много другого! В игре восемь планет, как в реальной жизни, а именно: Меркурий, Венера, Земля, Марс, Юпитер, Сатурн, Уран и Нептун. А дальше узнаете, когда попробуете эту замечательную игру!
+                </p>
+                <p class="description-love">
+                    Сделано с космической любовью — MoonLight *553578*
+                </p>
             </div>
         </div>
+    </section>
 
-    </div>
-    <!-- /ОБЁРТКА -->
-
-    <!-- РЕКЛАМА СНИЗУ (телефон) -->
-    <div class="ad-mobile" id="alexbitAdMobile" style="display:none;">
-        <a href="https://alexbit.page.gd/ads" target="_blank" rel="sponsored noopener"
-           style="display:block;background:#e9e9e9;color:#333;text-decoration:none;padding:8px 12px;border-radius:12px 12px 0 0;text-align:center;border-bottom:1px solid #d5d5d5;font-family:Arial,sans-serif;">
-            <span style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#444;">
-                <span style="display:inline-block;width:6px;height:6px;background:#C70909;border-radius:50%;vertical-align:middle;margin-right:6px;"></span>ALEXBIT ADS
-            </span>
-        </a>
-        <div style="background:rgba(26,27,31,0.85);backdrop-filter:blur(10px);border:1px solid rgba(107,70,193,0.3);border-radius:0 0 16px 16px;padding:16px;box-shadow:0 2px 10px rgba(0,0,0,0.3);text-align:center;">
-            <a id="alexbitLMobile" href="#" target="_blank" rel="noopener" style="display:block;">
-                <img id="alexbitIMobile" src="" alt="" style="width:100%;height:auto;border-radius:12px;display:none;">
-                <video id="alexbitVMobile" muted autoplay loop playsinline style="width:100%;height:auto;border-radius:12px;display:none;"></video>
-            </a>
-            <div style="font-size:11px;color:#999;margin-top:6px;">Реклама</div>
+    <section class="changelog">
+        <div class="changelog-card">
+            <h2>Нововведения и исправления</h2>
+            <p class="changelog-text">
+                Новая анимация при запуске игры; новое окно - Ежедневные задания; переделана система сохранений; новое окно - Сохранения; сброс игры теперь в окне сохранений; добавлен новый звук - звук выполнения ежедневного задания; в магазине появились пропуски времени - 6 часов и 12 часов; исправлена ошибка в окне бустов
+            </p>
         </div>
-    </div>
+    </section>
+
+    <section class="why-play">
+        <div class="why-play-card">
+            <h2>✨ Почему стоит поиграть?</h2>
+            <div class="reasons-grid">
+                <div class="reason">
+                    <span class="reason-icon">🪐</span>
+                    <h3>8 уникальных планет</h3>
+                    <p>От Меркурия до Нептуна — каждая планета приближают вас к владению вселенной!</p>
+                </div>
+                <div class="reason">
+                    <span class="reason-icon">🎵</span>
+                    <h3>Расслабляющая музыка</h3>
+                    <p>Погрузитесь в атмосферу космоса с нашим саундтреком</p>
+                </div>
+                <div class="reason">
+                    <span class="reason-icon">📅</span>
+                    <h3>Ежедневные задания</h3>
+                    <p>Новые ежедневные задания — получайте крутые бонусы</p>
+                </div>
+                <div class="reason">
+                    <span class="reason-icon">💾</span>
+                    <h3>Умные сохранения</h3>
+                    <p>Ваш прогресс всегда под защитой — несколько слотов сохранений</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="faq-card">
+            <h2>❓ Часто задаваемые вопросы</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">🔹 Как сохранить прогресс?</div>
+                    <div class="faq-answer">Прогресс сохраняется автоматически! Также вы можете создать ещё сохранения</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">🔹 Игра бесплатна?</div>
+                    <div class="faq-answer">Да, Cosmic Clicker полностью бесплатен! Никаких скрытых платежей и донатов</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">🔹 Будут ли ещё обновления?</div>
+                    <div class="faq-answer">Да, они конечно будут! Есть много контента для игры</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">🔹 Как связаться с разработчиком?</div>
+                    <div class="faq-answer">Все контакты есть в футере — Telegram, YouTube и Instagram. Пишите, всегда на связи!</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== НАЧАЛО: РЕКЛАМА ALEXBIT ADS (адаптирована под тёмную тему) ===== -->
+    <section class="ad-section">
+        <div id="alexbitAdNewsCard" class="news-card" style="
+            background: rgba(26, 27, 31, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(107, 70, 193, 0.3);
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            margin-bottom: 14px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #e5e5e5;
+            line-height: 1.55;
+        ">
+          <!-- Плашка ALEXBIT ADS -->
+          <a href="https://alexbit.page.gd/ads" target="_blank" rel="sponsored noopener"
+             style="
+                display: block;
+                background: rgba(107, 70, 193, 0.2);
+                color: #b794f4;
+                text-decoration: none;
+                padding: 10px 14px;
+                text-align: center;
+                border-bottom: 1px solid rgba(107, 70, 193, 0.3);
+                font-weight: 700;
+                font-size: 12px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+             ">
+            <span style="display:inline-block;width:6px;height:6px;background:#C70909;border-radius:50%;vertical-align:middle;margin-right:6px;"></span>
+            ALEXBIT ADS
+          </a>
+
+          <!-- Рекламный контент -->
+          <div style="padding: 20px 24px 24px;">
+            <a id="alexbitLNews" href="#" target="_blank" rel="noopener"
+               style="display: flex; border-radius: 20px; overflow: hidden; background: rgba(0,0,0,0.3); min-height: 150px; align-items: center; justify-content: center;">
+              <img id="alexbitINews" src="" alt="" style="width: 100%; height: auto; display: none; border-radius: 20px;">
+              <video id="alexbitVNews" muted autoplay loop playsinline style="width: 100%; height: auto; display: none; border-radius: 20px;"></video>
+            </a>
+
+            <div style="
+                margin-top: 12px;
+                font-size: 11px;
+                color: #808080;
+                text-align: center;
+            ">Реклама</div>
+          </div>
+        </div>
+    </section>
+    <!-- ===== КОНЕЦ: РЕКЛАМА ALEXBIT ADS ===== -->
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>📞 Тех. поддержка</h4>
+                <a href="https://t.me/IMitya637" target="_blank">Telegram — @IMitya637</a>
+            </div>
+            <div class="footer-column">
+                <h4>🎬 YouTube</h4>
+                <a href="http://www.youtube.com/@IMityaYT" target="_blank">@IMityaYT</a>
+            </div>
+            <div class="footer-column">
+                <h4>📷 Instagram</h4>
+                <a href="https://www.instagram.com/imitya_637?igsh=Ym02Z3kyd2F0YnQ3" target="_blank">@imitya_637</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Cosmic Clicker | MoonLight TM. Все права защищены
+        </div>
+    </footer>
 
     <div id="warningModal" class="warning-modal">
         <div class="warning-modal-content">
@@ -286,7 +225,7 @@
         }
     </script>
 
-    <!-- ===== ALEXBIT ADS — универсальный рекламный виджет ===== -->
+    <!-- ===== СКРИПТ РЕКЛАМЫ (ротация 10 сек) ===== -->
     <script>
     (function(){
       var FB_CONFIG = {
@@ -298,93 +237,41 @@
         messagingSenderId: "924575022979",
         appId: "1:924575022979:web:d4764a4a69c55eaab980b6"
       };
-      var ADS_PATH   = 'ads';
-      var ROTATE_MS  = 10000;      // ротация 10 секунд
-      var MOBILE_MAX = 1000;
-      var PROMO_URL  = 'https://alexbit.page.gd/ads';
+      var ADS_PATH = 'ads';
+      var ROTATE_MS = 10000;
 
-      function loadScript(src){
-        return new Promise(function(resolve, reject){
-          var s = document.createElement('script');
-          s.src = src;
-          s.onload = resolve;
-          s.onerror = function(){ reject(new Error('Failed to load: ' + src)); };
-          document.head.appendChild(s);
-        });
-      }
-      function ensureFirebase(){
-        return new Promise(function(resolve, reject){
-          if (window.firebase && window.firebase.apps) return resolve();
-          Promise.all([
-            loadScript('https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js'),
-            loadScript('https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js')
-          ]).then(resolve).catch(reject);
-        });
-      }
+      var wrap = document.getElementById('alexbitAdNewsCard');
+      var img  = document.getElementById('alexbitINews');
+      var vid  = document.getElementById('alexbitVNews');
+      var lnk  = document.getElementById('alexbitLNews');
+
+      if (!wrap || !img || !vid || !lnk) return;
+
+      var _ads = [], _i = 0, _timer = null;
+
       function normalizeUrl(u){
         if (!u || u === '#') return '#';
         if (!/^https?:\/\//i.test(u)) return 'https://' + u;
         return u;
       }
-      function isMobile(){ return window.innerWidth <= MOBILE_MAX; }
-
-      var els = {
-        desktopWrap: document.getElementById('alexbitAdDesktop'),
-        mobileWrap:  document.getElementById('alexbitAdMobile'),
-        iD: document.getElementById('alexbitIDesktop'),
-        vD: document.getElementById('alexbitVDesktop'),
-        lD: document.getElementById('alexbitLDesktop'),
-        iM: document.getElementById('alexbitIMobile'),
-        vM: document.getElementById('alexbitVMobile'),
-        lM: document.getElementById('alexbitLMobile')
-      };
-
-      var _ads = [], _i = 0, _timer = null;
-
-      function applyLayout(){
-        if (!_ads.length){
-          els.desktopWrap.style.display = 'none';
-          els.mobileWrap.style.display  = 'none';
-          return;
-        }
-        if (isMobile()){
-          els.desktopWrap.style.display = 'none';
-          els.mobileWrap.style.display  = 'block';
-        } else {
-          els.desktopWrap.style.display = 'block';
-          els.mobileWrap.style.display  = 'none';
-        }
-      }
-      window.addEventListener('resize', applyLayout);
-
-      function clearMedia(){
-        [els.iD, els.iM].forEach(function(img){
-          if (img){ img.style.display = 'none'; img.removeAttribute('src'); }
-        });
-        [els.vD, els.vM].forEach(function(v){
-          if (v){ v.pause(); v.removeAttribute('src'); v.style.display = 'none'; }
-        });
-      }
 
       function showAd(ad){
-        clearMedia();
-        var img = isMobile() ? els.iM : els.iD;
-        var vid = isMobile() ? els.vM : els.vD;
-        var lnk = isMobile() ? els.lM : els.lD;
+        img.style.display = 'none';
+        img.removeAttribute('src');
+        vid.pause();
+        vid.removeAttribute('src');
+        vid.style.display = 'none';
 
         if (ad.type === 'video' && ad.supabaseUrl){
-          if (vid){
-            vid.src = ad.supabaseUrl;
-            vid.style.display = 'block';
-            vid.play().catch(function(){});
-          }
+          vid.src = ad.supabaseUrl;
+          vid.style.display = 'block';
+          vid.play().catch(function(){});
         } else if (ad.supabaseUrl){
-          if (img){
-            img.src = ad.supabaseUrl;
-            img.style.display = 'block';
-          }
+          img.src = ad.supabaseUrl;
+          img.style.display = 'block';
         }
-        if (lnk) lnk.href = normalizeUrl(ad.link);
+
+        lnk.href = normalizeUrl(ad.link);
       }
 
       function rotate(){
@@ -392,6 +279,7 @@
         showAd(_ads[_i]);
         _i = (_i + 1) % _ads.length;
       }
+
       function startRotation(){
         if (_timer) clearInterval(_timer);
         _timer = setInterval(rotate, ROTATE_MS);
@@ -405,35 +293,177 @@
         }
       });
 
-      function startListening(){
-        if (!firebase.apps.length) firebase.initializeApp(FB_CONFIG);
-        var db = firebase.database();
-        db.ref(ADS_PATH).on('value', function(snap){
-          var data = snap.val();
-          if (!data){ _ads = []; applyLayout(); return; }
-          _ads = Object.keys(data)
-            .map(function(k){ return Object.assign({ id: k }, data[k]); })
-            .filter(function(x){ return x.active === true && x.supabaseUrl; })
-            .sort(function(a, b){ return (a.priority || 99) - (b.priority || 99); });
+      function loadScript(src){
+        return new Promise(function(resolve, reject){
+          var s = document.createElement('script');
+          s.src = src;
+          s.onload = resolve;
+          s.onerror = function(){ reject(new Error('Failed to load: ' + src)); };
+          document.head.appendChild(s);
+        });
+      }
 
-          if (!_ads.length){ applyLayout(); return; }
-          _i = 0;
-          applyLayout();
-          rotate();
-          startRotation();
+      function ensureFirebase(){
+        return new Promise(function(resolve, reject){
+          if (window.firebase && window.firebase.apps) return resolve();
+          Promise.all([
+            loadScript('https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js'),
+            loadScript('https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js')
+          ]).then(resolve).catch(reject);
         });
       }
 
       ensureFirebase()
-        .then(startListening)
+        .then(function(){
+          if (!firebase.apps.length) firebase.initializeApp(FB_CONFIG);
+          var db = firebase.database();
+          db.ref(ADS_PATH).on('value', function(snap){
+            var data = snap.val();
+            if (!data){ wrap.style.display = 'none'; return; }
+
+            _ads = Object.keys(data)
+              .map(function(k){ return Object.assign({ id: k }, data[k]); })
+              .filter(function(x){ return x.active === true && x.supabaseUrl; })
+              .sort(function(a, b){ return (a.priority || 99) - (b.priority || 99); });
+
+            if (!_ads.length){ wrap.style.display = 'none'; return; }
+
+            _i = 0;
+            wrap.style.display = '';
+            rotate();
+            startRotation();
+          });
+        })
         .catch(function(err){
           console.warn('[AlexBit Ads] Firebase не загрузился:', err);
-          els.desktopWrap.style.display = 'none';
-          els.mobileWrap.style.display  = 'none';
+          wrap.style.display = 'none';
         });
     })();
     </script>
-    <!-- ===== /ALEXBIT ADS ===== -->
+    <!-- ===== КОНЕЦ: СКРИПТ РЕКЛАМЫ ===== -->
 
+    <!-- ===== УНИВЕРСАЛЬНАЯ ЗАЩИТА ALEXBIT ===== -->
+    <style>
+      /* Запрет выделения (кроме полей ввода) */
+      body {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+      }
+      input, textarea, [contenteditable], select {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+      }
+      img {
+        -webkit-user-drag: none;
+        user-drag: none;
+      }
+      * {
+        -webkit-user-drag: none;
+      }
+    </style>
+
+    <script>
+    (function(){
+      'use strict';
+
+      // 1. Правый клик
+      document.addEventListener('contextmenu', function(e){
+        e.preventDefault();
+        return false;
+      });
+
+      // 2. Клавиши: F12, Ctrl+Shift+I/J/C, Ctrl+U, Ctrl+S, Ctrl+A, Ctrl+P, PrintScreen
+      document.addEventListener('keydown', function(e){
+        const k = (e.key || '').toLowerCase();
+        const ctrl = e.ctrlKey || e.metaKey;
+        const shift = e.shiftKey;
+
+        if (e.key === 'F12' || e.keyCode === 123) { e.preventDefault(); return false; }
+        if (ctrl && shift && ['i','j','c'].includes(k)) { e.preventDefault(); return false; }
+        if (ctrl && k === 'u') { e.preventDefault(); return false; }
+        if (ctrl && k === 's') { e.preventDefault(); return false; }
+        if (ctrl && k === 'a') { e.preventDefault(); return false; }
+        if (ctrl && k === 'p') { e.preventDefault(); return false; }
+
+        if (ctrl && k === 'c') {
+          const tag = (e.target && e.target.tagName || '').toLowerCase();
+          if (!['input','textarea','select'].includes(tag) && !(e.target && e.target.isContentEditable)) {
+            e.preventDefault(); return false;
+          }
+        }
+
+        if (ctrl && shift && ['s','e'].includes(k)) { e.preventDefault(); return false; }
+      });
+
+      // 3. Drag — запрет перетаскивания
+      document.addEventListener('dragstart', function(e){
+        e.preventDefault();
+        return false;
+      });
+
+      // 4. Выделение мышью (кроме input/textarea)
+      document.addEventListener('selectstart', function(e){
+        const tag = (e.target && e.target.tagName || '').toLowerCase();
+        if (!['input','textarea','select'].includes(tag) && !(e.target && e.target.isContentEditable)) {
+          e.preventDefault();
+          return false;
+        }
+      });
+
+      // 5. Копирование (только для не-input)
+      document.addEventListener('copy', function(e){
+        const tag = (e.target && e.target.tagName || '').toLowerCase();
+        if (!['input','textarea','select'].includes(tag) && !(e.target && e.target.isContentEditable)) {
+          e.preventDefault();
+          return false;
+        }
+      });
+
+      // 6. Двойной клик — выделение слова
+      document.addEventListener('mousedown', function(e){
+        if (e.detail > 1) e.preventDefault();
+      });
+
+      // 7. PrintScreen — очистка буфера (не всегда работает)
+      document.addEventListener('keyup', function(e){
+        if (e.key === 'PrintScreen' || e.keyCode === 44) {
+          try {
+            navigator.clipboard.writeText('');
+          } catch(err) {}
+        }
+      });
+
+      // 8. Проверка DevTools — при открытии блокирует страницу
+      let devtoolsOpen = false;
+      const el = new Image();
+      Object.defineProperty(el, 'id', {
+        get: function(){
+          devtoolsOpen = true;
+          document.body.innerHTML =
+            '<div style="display:flex;justify-content:center;align-items:center;min-height:100vh;background:#000;color:#fff;font-family:sans-serif;font-size:22px;text-align:center;padding:30px;line-height:1.5">' +
+            '⛔ DevTools обнаружен.<br><br>Закройте инструменты разработчика и обновите страницу.' +
+            '</div>';
+          return '';
+        }
+      });
+
+      // 9. Точечное обнаружение (мягкое)
+      setInterval(function(){
+        const before = new Date();
+        debugger;
+        const after = new Date();
+        if (after - before > 200) {
+          // DevTools открыт — можно выкинуть или проигнорировать
+        }
+      }, 1000);
+
+    })();
+    </script>
+    <!-- ===== /УНИВЕРСАЛЬНАЯ ЗАЩИТА ALEXBIT ===== -->
 </body>
 </html>
