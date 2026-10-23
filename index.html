@@ -23,6 +23,63 @@
         </div>
     </section>
 
+    <!-- ===== РЕКЛАМА ALEXBIT ADS (адаптирована под тёмную тему) ===== -->
+    <section class="ad-section">
+        <div id="alexbitAdNewsCard" class="news-card" style="
+            background: rgba(26, 27, 31, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(107, 70, 193, 0.3);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            margin-bottom: 14px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #e5e5e5;
+            line-height: 1.55;
+        ">
+          <!-- Плашка ALEXBIT ADS -->
+          <a href="https://alexbit.page.gd/ads" target="_blank" rel="sponsored noopener"
+             style="
+                display: block;
+                background: rgba(107, 70, 193, 0.15);
+                color: #b794f4;
+                text-decoration: none;
+                padding: 10px 14px;
+                text-align: center;
+                border-bottom: 1px solid rgba(107, 70, 193, 0.3);
+                font-weight: 700;
+                font-size: 12px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                transition: background 0.2s ease;
+             "
+             onmouseover="this.style.background='rgba(107,70,193,0.25)'"
+             onmouseout="this.style.background='rgba(107,70,193,0.15)'">
+            <span style="display:inline-block;width:6px;height:6px;background:#C70909;border-radius:50%;vertical-align:middle;margin-right:6px;box-shadow:0 0 6px #C70909;"></span>
+            ALEXBIT ADS
+          </a>
+
+          <!-- Рекламный контент -->
+          <div style="padding: 16px 18px 18px;">
+            <a id="alexbitLNews" href="#" target="_blank" rel="noopener"
+               style="display: flex; border-radius: 16px; overflow: hidden; background: rgba(0, 0, 0, 0.35); min-height: 150px; align-items: center; justify-content: center; border: 1px solid rgba(107, 70, 193, 0.15);">
+              <img id="alexbitINews" src="" alt="" style="width: 100%; height: auto; display: none; border-radius: 16px;">
+              <video id="alexbitVNews" muted autoplay loop playsinline style="width: 100%; height: auto; display: none; border-radius: 16px;"></video>
+            </a>
+
+            <div style="
+                margin-top: 12px;
+                font-size: 11px;
+                color: #808080;
+                text-align: center;
+                letter-spacing: 0.5px;
+            ">Реклама</div>
+          </div>
+        </div>
+    </section>
+    <!-- ===== КОНЕЦ: РЕКЛАМА ALEXBIT ADS ===== -->
+
     <section class="game-description">
         <div class="description-card">
             <div class="description-image-wrapper">
@@ -99,58 +156,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ===== НАЧАЛО: РЕКЛАМА ALEXBIT ADS (адаптирована под тёмную тему) ===== -->
-    <section class="ad-section">
-        <div id="alexbitAdNewsCard" class="news-card" style="
-            background: rgba(26, 27, 31, 0.85);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(107, 70, 193, 0.3);
-            border-radius: 32px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            margin-bottom: 14px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            color: #e5e5e5;
-            line-height: 1.55;
-        ">
-          <!-- Плашка ALEXBIT ADS -->
-          <a href="https://alexbit.page.gd/ads" target="_blank" rel="sponsored noopener"
-             style="
-                display: block;
-                background: rgba(107, 70, 193, 0.2);
-                color: #b794f4;
-                text-decoration: none;
-                padding: 10px 14px;
-                text-align: center;
-                border-bottom: 1px solid rgba(107, 70, 193, 0.3);
-                font-weight: 700;
-                font-size: 12px;
-                letter-spacing: 2px;
-                text-transform: uppercase;
-             ">
-            <span style="display:inline-block;width:6px;height:6px;background:#C70909;border-radius:50%;vertical-align:middle;margin-right:6px;"></span>
-            ALEXBIT ADS
-          </a>
-
-          <!-- Рекламный контент -->
-          <div style="padding: 20px 24px 24px;">
-            <a id="alexbitLNews" href="#" target="_blank" rel="noopener"
-               style="display: flex; border-radius: 20px; overflow: hidden; background: rgba(0,0,0,0.3); min-height: 150px; align-items: center; justify-content: center;">
-              <img id="alexbitINews" src="" alt="" style="width: 100%; height: auto; display: none; border-radius: 20px;">
-              <video id="alexbitVNews" muted autoplay loop playsinline style="width: 100%; height: auto; display: none; border-radius: 20px;"></video>
-            </a>
-
-            <div style="
-                margin-top: 12px;
-                font-size: 11px;
-                color: #808080;
-                text-align: center;
-            ">Реклама</div>
-          </div>
-        </div>
-    </section>
-    <!-- ===== КОНЕЦ: РЕКЛАМА ALEXBIT ADS ===== -->
 
     <footer class="footer">
         <div class="footer-content">
@@ -344,7 +349,6 @@
 
     <!-- ===== УНИВЕРСАЛЬНАЯ ЗАЩИТА ALEXBIT ===== -->
     <style>
-      /* Запрет выделения (кроме полей ввода) */
       body {
         -webkit-user-select: none;
         -moz-user-select: none;
@@ -371,13 +375,11 @@
     (function(){
       'use strict';
 
-      // 1. Правый клик
       document.addEventListener('contextmenu', function(e){
         e.preventDefault();
         return false;
       });
 
-      // 2. Клавиши: F12, Ctrl+Shift+I/J/C, Ctrl+U, Ctrl+S, Ctrl+A, Ctrl+P, PrintScreen
       document.addEventListener('keydown', function(e){
         const k = (e.key || '').toLowerCase();
         const ctrl = e.ctrlKey || e.metaKey;
@@ -400,13 +402,11 @@
         if (ctrl && shift && ['s','e'].includes(k)) { e.preventDefault(); return false; }
       });
 
-      // 3. Drag — запрет перетаскивания
       document.addEventListener('dragstart', function(e){
         e.preventDefault();
         return false;
       });
 
-      // 4. Выделение мышью (кроме input/textarea)
       document.addEventListener('selectstart', function(e){
         const tag = (e.target && e.target.tagName || '').toLowerCase();
         if (!['input','textarea','select'].includes(tag) && !(e.target && e.target.isContentEditable)) {
@@ -415,7 +415,6 @@
         }
       });
 
-      // 5. Копирование (только для не-input)
       document.addEventListener('copy', function(e){
         const tag = (e.target && e.target.tagName || '').toLowerCase();
         if (!['input','textarea','select'].includes(tag) && !(e.target && e.target.isContentEditable)) {
@@ -424,12 +423,10 @@
         }
       });
 
-      // 6. Двойной клик — выделение слова
       document.addEventListener('mousedown', function(e){
         if (e.detail > 1) e.preventDefault();
       });
 
-      // 7. PrintScreen — очистка буфера (не всегда работает)
       document.addEventListener('keyup', function(e){
         if (e.key === 'PrintScreen' || e.keyCode === 44) {
           try {
@@ -438,7 +435,6 @@
         }
       });
 
-      // 8. Проверка DevTools — при открытии блокирует страницу
       let devtoolsOpen = false;
       const el = new Image();
       Object.defineProperty(el, 'id', {
@@ -452,13 +448,12 @@
         }
       });
 
-      // 9. Точечное обнаружение (мягкое)
       setInterval(function(){
         const before = new Date();
         debugger;
         const after = new Date();
         if (after - before > 200) {
-          // DevTools открыт — можно выкинуть или проигнорировать
+          // DevTools открыт
         }
       }, 1000);
 
