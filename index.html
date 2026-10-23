@@ -335,8 +335,9 @@
         }
     </script>
 
-    <!-- ===== УНИВЕРСАЛЬНАЯ ЗАЩИТА ALEXBIT ===== -->
+    <!-- ===== УНИВЕРСАЛЬНАЯ ЗАЩИТА ALEXBIT (РАБОЧАЯ ВЕРСИЯ) ===== -->
     <style>
+      /* Запрет выделения (кроме полей ввода) */
       body {
         -webkit-user-select: none;
         -moz-user-select: none;
@@ -353,6 +354,7 @@
       img {
         -webkit-user-drag: none;
         user-drag: none;
+        pointer-events: none; /* Блокирует клики по картинкам (можно убрать, если картинки кликабельны) */
       }
       * {
         -webkit-user-drag: none;
@@ -363,38 +365,50 @@
     (function(){
       'use strict';
 
+      // 1. Блокировка правого клика
       document.addEventListener('contextmenu', function(e){
         e.preventDefault();
         return false;
       });
 
+      // 2. Блокировка клавиш (F12, DevTools, Ctrl+U/S/A/P)
       document.addEventListener('keydown', function(e){
         const k = (e.key || '').toLowerCase();
         const ctrl = e.ctrlKey || e.metaKey;
         const shift = e.shiftKey;
 
-        if (e.key === 'F12' || e.keyCode === 123) { e.preventDefault(); return false; }
-        if (ctrl && shift && ['i','j','c'].includes(k)) { e.preventDefault(); return false; }
-        if (ctrl && k === 'u') { e.preventDefault(); return false; }
-        if (ctrl && k === 's') { e.preventDefault(); return false; }
-        if (ctrl && k === 'a') { e.preventDefault(); return false; }
-        if (ctrl && k === 'p') { e.preventDefault(); return false; }
-
-        if (ctrl && k === 'c') {
-          const tag = (e.target && e.target.tagName || '').toLowerCase();
-          if (!['input','textarea','select'].includes(tag) && !(e.target && e.target.isContentEditable)) {
-            e.preventDefault(); return false;
-          }
+        // Если фокус в плеере/поле ввода — не блокируем
+        const tag = (e.target && e.target.tagName || '').toLowerCase();
+        if (['audio', 'video', 'input', 'textarea', 'select'].includes(tag) || (e.target && e.target.isContentEditable)) {
+          return;
         }
 
-        if (ctrl && shift && ['s','e'].includes(k)) { e.preventDefault(); return false; }
+        // F12
+        if (e.key === 'F12' || e.keyCode === 123) { e.preventDefault(); return false; }
+
+        // Ctrl+Shift+I / J / C — DevTools
+        if (ctrl && shift && ['i','j','c'].includes(k)) { e.preventDefault(); return false; }
+
+        // Ctrl+U — просмотр кода
+        if (ctrl && k === 'u') { e.preventDefault(); return false; }
+
+        // Ctrl+S — сохранить страницу
+        if (ctrl && k === 's') { e.preventDefault(); return false; }
+
+        // Ctrl+A — выделить всё
+        if (ctrl && k === 'a') { e.preventDefault(); return false; }
+
+        // Ctrl+P — печать
+        if (ctrl && k === 'p') { e.preventDefault(); return false; }
       });
 
+      // 3. Блокировка перетаскивания (drag)
       document.addEventListener('dragstart', function(e){
         e.preventDefault();
         return false;
       });
 
+      // 4. Блокировка выделения текста мышью (кроме полей)
       document.addEventListener('selectstart', function(e){
         const tag = (e.target && e.target.tagName || '').toLowerCase();
         if (!['input','textarea','select'].includes(tag) && !(e.target && e.target.isContentEditable)) {
@@ -403,6 +417,7 @@
         }
       });
 
+      // 5. Блокировка копирования (Ctrl+C, кроме полей)
       document.addEventListener('copy', function(e){
         const tag = (e.target && e.target.tagName || '').toLowerCase();
         if (!['input','textarea','select'].includes(tag) && !(e.target && e.target.isContentEditable)) {
@@ -411,17 +426,19 @@
         }
       });
 
+      // 6. Блокировка двойного клика (выделение слова)
       document.addEventListener('mousedown', function(e){
         if (e.detail > 1) e.preventDefault();
       });
 
+      // 7. PrintScreen — очистка буфера (частично)
       document.addEventListener('keyup', function(e){
         if (e.key === 'PrintScreen' || e.keyCode === 44) {
-          try {
-            navigator.clipboard.writeText('');
-          } catch(err) {}
+          try { navigator.clipboard.writeText(''); } catch(err) {}
         }
       });
+
+      console.log('[AlexBit Protect] Защита активна');
     })();
     </script>
     <!-- ===== /УНИВЕРСАЛЬНАЯ ЗАЩИТА ALEXBIT ===== -->
