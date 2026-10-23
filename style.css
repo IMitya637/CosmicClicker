@@ -13,6 +13,43 @@ body {
     overflow-x: hidden;
 }
 
+/* ===== Секция рекламы ALEXBIT ADS ===== */
+.ad-section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.ad-section .news-card {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.ad-section .news-card:hover {
+    border-color: rgba(107, 70, 193, 0.6);
+}
+
+.ad-section #alexbitLNews {
+    transition: transform 0.3s ease;
+}
+
+.ad-section #alexbitLNews:hover {
+    transform: scale(1.01);
+}
+
+.ad-section #alexbitINews,
+.ad-section #alexbitVNews {
+    object-fit: cover;
+}
+
+@media (max-width: 700px) {
+    .ad-section {
+        padding: 0 20px;
+        margin: 40px auto;
+    }
+}
+
 /* Космический фон */
 .cosmic-background {
     position: fixed;
